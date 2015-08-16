@@ -7,7 +7,7 @@ _"Because a good tool is a pleasure to use."_  That's a [Vibrashank](http://www.
 
 # Overview
 
-A data-flow front-end web framework in ClojureScript, resting on ReactJS without using its internals, employing [a singleton root Cursor](http://i.imgur.com/Lf7MNXE.jpg), and using CSP to organize and order client/server communication.
+A data-flow front-end web framework in ClojureScript, resting on ReactJS without using its internals, employing [a singleton root Cursor](http://i.imgur.com/Lf7MNXE.jpg), using CSP to organize and order client/server communication, and prioritizing React JSX for markup.
 
 By "front-end" is meant code that either runs on the web browser, or runs on the server as a server-side rendering operation.
 
