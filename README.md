@@ -7,7 +7,7 @@ _"Because a good tool is a pleasure to use."_  That's a [Vibrashank](http://www.
 
 # Overview
 
-A data-flow web framework in ClojureScript, resting on ReactJS without using its internals, employing a Cursor, and using CSP to organize and order client/server communication.
+A data-flow web framework in ClojureScript, resting on ReactJS without using its internals, employing a singleton root Cursor, and using CSP to organize and order client/server communication.
 
 # Links
 
