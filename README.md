@@ -7,6 +7,12 @@ _"Because a good tool is a pleasure to use."_  That's a [Vibrashank](http://www.
 
 A data-flow web framework in ClojureScript, resting on ReactJS without using its internals, employing a Cursor, and using CSP to organize and order client/server communication.
 
+# Links
+
+* Chat: https://gitter.im/christopherbalz/vibrashank
+* Wiki (same as link on right): https://github.com/christopherbalz/vibrashank/wiki
+* Website: http://christopherbalz.github.io/vibrashank/
+
 # Status
 
 This project is just beginning.
