@@ -1,7 +1,7 @@
 # vibrashank
 
 ![A John Deere Vibrashank Chisel Plow](http://i.imgur.com/cY2kW0J.jpg)  
-_"Because a good tool is a pleasure to use."_  That's a Vibrashank Chisel Plow, used for aerating farmland soil.
+_"Because a good tool is a pleasure to use."_  That's a Vibrashank Chisel Plow, used for [aerating farmland](https://books.google.com/books?id=r-xHAAAAYAAJ&dq=%22from+the+soil+up%22&focus=searchwithinvolume&q=aeration) soil.
 
 # Overview
 
