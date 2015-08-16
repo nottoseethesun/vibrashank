@@ -5,7 +5,7 @@ _"Because a good tool is a pleasure to use."_  That's a Vibrashank Chisel Plow, 
 
 # Overview
 
-A data-flow web framework in ClojureScript, resting on ReactJS without using its internals, and employing a Cursor.
+A data-flow web framework in ClojureScript, resting on ReactJS without using its internals, employing a Cursor, and using CSP to organize and order client/server communication.
 
 # Status
 
