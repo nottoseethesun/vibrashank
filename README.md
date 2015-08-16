@@ -18,3 +18,7 @@ A data-flow web framework in ClojureScript, resting on ReactJS without using its
 # Status
 
 This project is just beginning.
+
+# Contributing
+
+See https://github.com/christopherbalz/vibrashank/wiki#contributing
