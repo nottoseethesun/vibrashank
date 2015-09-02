@@ -15,6 +15,7 @@
 
 (defn about-page []
   [:div [:h2 "About vibrashank"]
+   [:section [:a {:href "https://github.com/christopherbalz/vibrashank"} "Project Home"]]
    [:div [:a {:href "#/"} "go to the home page"]]])
 
 (defn current-page []
