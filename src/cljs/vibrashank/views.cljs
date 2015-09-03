@@ -1,4 +1,4 @@
-(ns vibrashank.core
+(ns vibrashank.views
     (:require [reagent.core :as reagent :refer [atom]]
               [reagent.session :as session]))
 

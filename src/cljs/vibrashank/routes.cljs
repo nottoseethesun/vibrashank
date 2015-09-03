@@ -1,4 +1,4 @@
-(ns vibrashank.core
+(ns vibrashank.routes
   (:require
    [reagent.core :as reagent :refer [atom]]
    [reagent.session :as session]
@@ -8,7 +8,7 @@
 (secretary/set-config! :prefix "#")
 
 (secretary/defroute "/" []
-  (session/put! :current-page #'home-page))
+  (session/put! :current-page #'vibrashank.views/home-page))
 
 (secretary/defroute "/about" []
-  (session/put! :current-page #'about-page))
+  (session/put! :current-page #'vibrashank.views/about-page))

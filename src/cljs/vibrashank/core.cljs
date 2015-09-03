@@ -14,8 +14,8 @@
 ;; Initialize app
 
 (defn mount-root []
-  (reagent/render [current-page] (.getElementById js/document "app")))
+  (reagent/render [vibrashank.views/current-page] (.getElementById js/document "app")))
 
 (defn init! []
-  (hook-browser-navigation!)
+  (vibrashank.history/hook-browser-navigation!)
   (mount-root))
