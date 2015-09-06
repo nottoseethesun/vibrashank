@@ -18,7 +18,8 @@ By "front-end" is meant code that either runs on the web browser, or runs on the
 If  you are not already set up with lein and clojure, you will need to do the following:
 
 1. Install the latest version of the Java JDK (not the SE or JRE).  There is no generic link to the latest JDK, in a mark of lack of usability for developers, but here is [the download page for Java JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
-1. Install [lein](http://leiningen.org) in your preferred way, such as `brew install lein`.
+  * There may be easier ways to install the jdk, such as with a brew cask (`Caskroom/cask/java`).
+1. Install [lein](http://leiningen.org) in your preferred way, such as `brew install leiningen`.
 
 ## Installation and Running of this Project
 
