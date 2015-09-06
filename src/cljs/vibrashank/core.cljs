@@ -16,14 +16,16 @@
 ;; -------------------------
 ;; Initialize app
 
-(def Vibrashank {:app-cursor {}, :util {}})
 
+(def vibrashank-initial-atom (atom {:vibrashank {:app-cursor {}, :util {}}} )) ;; Set up the initial atom for the vibrashank cursor.
+;;(def my-atom (freactive.core/atom {:a {:b [{:x 0}]}}))
+;;(freactive.core/cursor my-atom [:a :b])
+;;(def vibrashank-cursor (freactive.core/cursor vibrashank-initial-atom :vibrashank))
+
+;; @to-do: change to cursor below
 (defn mount-root []
-  (reagent/render [vibrashank.views/current-page [(:app-cursor Vibrashank)]] (.getElementById js/document "app")))
+  (reagent/render [vibrashank.views/current-page [(:app-cursor vibrashank-initial-atom)]] (.getElementById js/document "app")))
 
 (defn init! []
   (vibrashank.history/hook-browser-navigation!)
   (mount-root))
-
-(def my-atom (freactive.core/atom {:a {:b [{:x 0}]}}))
-(freactive.core/cursor my-atom [:a :b])
