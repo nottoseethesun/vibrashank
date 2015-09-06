@@ -23,8 +23,10 @@ If  you are not already set up with lein and clojure, you will need to do the fo
 
 ## Installation and Running of this Project
 
-`git clone git@github.com:christopherbalz/vibrashank.git`
-`lein figwheel`
+```{bash}
+git clone git@github.com:christopherbalz/vibrashank.git
+lein figwheel
+```
 
 ## Extra Info
 
