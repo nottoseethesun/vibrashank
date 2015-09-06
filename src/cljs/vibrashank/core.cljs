@@ -1,18 +1,15 @@
 (ns vibrashank.core
-    (:refer-clojure :exclude [atom read-string])
-    (:require [reagent.core :as reagent :refer [atom]]
+  (:refer-clojure :exclude [read-string])
+  (:require [reagent.core :as reagent]
               [reagent.session :as session]
               [secretary.core :as secretary :include-macros true]
               [goog.events :as events]
               [goog.history.EventType :as EventType]
-              [freactive.core :refer
-               [atom cursor lens-cursor update-in! update!]]
               [cljs.reader :refer [read-string]]
               [vibrashank.views]
               [vibrashank.routes]
-              [vibrashank.history])
-    (:require-macros
-     [freactive.macros :refer [rx]])
+              [vibrashank.history]
+              [freactive.core])
     (:import goog.History))
 
 
@@ -27,3 +24,6 @@
 (defn init! []
   (vibrashank.history/hook-browser-navigation!)
   (mount-root))
+
+(def my-atom (freactive.core/atom {:a {:b [{:x 0}]}}))
+(freactive.core/cursor my-atom [:a :b])
