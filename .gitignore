@@ -8,6 +8,8 @@ pom.xml.asc
 /.lein-*
 /.nrepl-port
 /resources/public/js
+/resources/public/css/site.min.css
 /out
 /.repl
 *.log
+.lein-git-deps

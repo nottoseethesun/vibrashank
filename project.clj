@@ -19,7 +19,7 @@
                  [org.clojure/clojurescript "1.7.107" :scope "provided"]
                  [secretary "1.2.3"]
                  [org.clojure/core.async "0.1.346.0-17112a-alpha"]
-                 [freactive.core "0.2.0-alpha1"]]  ;; freactive.core supplies the cursor Vibrashank uses.
+                 [freactive.core "0.2.0-SNAPSHOT"]]  ;; freactive.core supplies the cursor Vibrashank uses.
 
   :plugins [[lein-environ "1.0.0"]
             [lein-asset-minifier "0.2.2"]]
@@ -60,11 +60,15 @@
                                   [org.clojure/tools.nrepl "0.2.10"]
                                   [pjstadig/humane-test-output "0.7.0"]]
 
+
                    :source-paths ["env/dev/clj"]
                    :plugins [[lein-figwheel "0.3.7"]
                              [lein-cljsbuild "1.0.6"]
                              [com.cemerick/clojurescript.test "0.3.3"]
-                             [lein-less "1.7.5"]]
+                             [lein-less "1.7.5"]
+                             [lein-git-deps "0.0.2"]]
+
+                   :git-dependencies [["https://github.com/aaronc/freactive.core.git"]]
 
                    :injections [(require 'pjstadig.humane-test-output)
                                 (pjstadig.humane-test-output/activate!)]
