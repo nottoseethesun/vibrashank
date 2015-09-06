@@ -21,7 +21,7 @@ If  you are not already set up with lein and clojure, you will need to do the fo
   * There may be easier ways to install the jdk, such as with a brew cask (`Caskroom/cask/java`).
 1. Install [lein](http://leiningen.org) in your preferred way, such as `brew install leiningen`.
 
-## Installation and Running of this Project
+## Installing and Running this Project
 
 ```{bash}
 git clone git@github.com:christopherbalz/vibrashank.git
