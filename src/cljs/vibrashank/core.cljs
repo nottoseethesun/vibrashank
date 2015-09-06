@@ -9,21 +9,22 @@
               [vibrashank.views]
               [vibrashank.routes]
               [vibrashank.history]
-              [freactive.core])
+              [freactive.core :as fcore])
     (:import goog.History))
 
 
 ;; -------------------------
 ;; Initialize app
 
-(def Vibrashank {:app-cursor {}, :util {}})
+
+;; Set up the initial atom for the vibrashank cursor.
+(def vibrashank-initial-atom (fcore/atom {:vibrashank {:app-cursor { :ui {:current-page "home"}, :data {}}, :util {} }} ))
+;; Now make the cursor.
+(def vibrashank-cursor (fcore/cursor vibrashank-initial-atom :vibrashank))
 
 (defn mount-root []
-  (reagent/render [vibrashank.views/current-page [(:app-cursor Vibrashank)]] (.getElementById js/document "app")))
+  (reagent/render [vibrashank.views/current-page [(:app-cursor vibrashank-cursor)]] (.getElementById js/document "app")))
 
 (defn init! []
   (vibrashank.history/hook-browser-navigation!)
   (mount-root))
-
-(def my-atom (freactive.core/atom {:a {:b [{:x 0}]}}))
-(freactive.core/cursor my-atom [:a :b])
