@@ -11,5 +11,5 @@
    [:section [:a {:href "https://github.com/christopherbalz/vibrashank"} "Project Home"]]
    [:div [:a {:href "#/"} "go to the home page"]]])
 
-(defn current-page []
+(defn current-page [app-cursor]
   [:div [(session/get :current-page)]])
