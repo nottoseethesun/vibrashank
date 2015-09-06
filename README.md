@@ -11,8 +11,34 @@ A data-flow front-end web framework in ClojureScript, resting on ReactJS without
 
 By "front-end" is meant code that either runs on the web browser, or runs on the server as a server-side rendering operation.
 
+# Installation
+
+## Pre-requisites
+
+If  you are not already set up with lein and clojure, you will need to do the following:
+
+1. Install the latest version of the Java JDK (not the SE or JRE).  There is no generic link to the latest JDK, in a mark of lack of usability for developers, but here is [the download page for Java JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
+1. Install [lein](http://leiningen.org) in your preferred way, such as `brew install lein`.
+
+## Installation and Running of this Project
+
+`git clone git@github.com:christopherbalz/vibrashank.git`
+`lein figwheel`
+
+## Extra Info
+
+See the `lein` commands available for this environment at: https://github.com/reagent-project/reagent-template
+
+# Running
+
+This builds and runs:
+`lein figwheel`
+
+For more refined commands, see the `lein` commands available for this environment at: https://github.com/reagent-project/reagent-template
+
 # Links
 
+* Live Demo (currently not much, as this is a w.i.p.): http://glacial-tundra-2891.herokuapp.com/
 * Chat: https://gitter.im/christopherbalz/vibrashank
 * Wiki (same as link on right): https://github.com/christopherbalz/vibrashank/wiki
 * Website: http://christopherbalz.github.io/vibrashank/
