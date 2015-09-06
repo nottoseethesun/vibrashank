@@ -60,11 +60,15 @@
                                   [org.clojure/tools.nrepl "0.2.10"]
                                   [pjstadig/humane-test-output "0.7.0"]]
 
+
                    :source-paths ["env/dev/clj"]
                    :plugins [[lein-figwheel "0.3.7"]
                              [lein-cljsbuild "1.0.6"]
                              [com.cemerick/clojurescript.test "0.3.3"]
-                             [lein-less "1.7.5"]]
+                             [lein-less "1.7.5"]
+                             [lein-git-deps "0.0.2"]]
+
+                   :git-dependencies [["https://github.com/aaronc/freactive.core.git"]]
 
                    :injections [(require 'pjstadig.humane-test-output)
                                 (pjstadig.humane-test-output/activate!)]
