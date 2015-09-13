@@ -3,7 +3,7 @@
 [![Join the chat at https://gitter.im/christopherbalz/vibrashank](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/christopherbalz/vibrashank?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ![A John Deere Vibrashank Chisel Plow](http://i.imgur.com/cY2kW0J.jpg)  
-_"Because a good tool is a pleasure to use."_  That's a [Vibrashank](http://www.ebay.com/sch/i.html?_from=R40&_trksid=p2054897.m570.l1313.TR0.TRC0.H0.Xvibrashank.TRS0&_nkw=vibrashank&_sacat=0) [Chisel Plow](http://www.extension.org/pages/58733/video-clip:-chisel-plow-and-field-cultivator-to-prepare-fields-from-vegetable-farmers-and-their-sust#.VdDAAbRh3kE), characterized by tines made of solid spring steel that are used for [aerating farmland](https://books.google.com/books?id=r-xHAAAAYAAJ&dq=%22from+the+soil+up%22&focus=searchwithinvolume&q=aeration soil).
+_"Because a good tool is a pleasure to use."_  That's a [Vibrashank](http://www.ebay.com/sch/i.html?_from=R40&_trksid=p2054897.m570.l1313.TR0.TRC0.H0.Xvibrashank.TRS0&_nkw=vibrashank&_sacat=0) [Chisel Plow](http://www.extension.org/pages/58733/video-clip:-chisel-plow-and-field-cultivator-to-prepare-fields-from-vegetable-farmers-and-their-sust#.VdDAAbRh3kE), characterized by tines made of solid spring steel that are used for [aerating farmland](https://books.google.com/books?id=r-xHAAAAYAAJ&dq=%22from+the+soil+up%22&focus=searchwithinvolume&q=aeration soil).  Like the data-flow in this framework, a vibrashank chisel plow transmits power straight down into the soil,  using simple but very unique tines to do the job like no other.
 
 # Overview
 
