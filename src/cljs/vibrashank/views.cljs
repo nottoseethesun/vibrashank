@@ -6,10 +6,10 @@
   [:div [:h2 "Welcome to vibrashank"]
    [:div [:a {:href "#/about"} "go to about page"]]])
 
-(defn about-page []
+(defn about-page [appData, uiData]
   [:div [:h2 "About vibrashank"]
    [:section [:a {:href "https://github.com/christopherbalz/vibrashank"} "Project Home"]]
-   [:div [:a {:href "#/"} "go to the home page"]]])
+   [:div [:a {:href "#/"} "go to the home page"]] [:div (:user-text appData)] ])
 
 (defn current-page [app-cursor]
-  [:div [(session/get :current-page)]])
+  [:div [(session/get :current-page) (:data ((keyword :current-page) app-cursor)) (:ui ((keyword :current-page) app-cursor)) ]])

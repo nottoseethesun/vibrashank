@@ -1,7 +1,6 @@
 (ns vibrashank.core
   (:refer-clojure :exclude [read-string])
   (:require [reagent.core :as reagent]
-              [reagent.session :as session]
               [secretary.core :as secretary :include-macros true]
               [goog.events :as events]
               [goog.history.EventType :as EventType]
@@ -18,7 +17,11 @@
 
 
 ;; Set up the initial atom for the vibrashank cursor.
-(def vibrashank-initial-atom (fcore/atom {:vibrashank {:app-cursor { :ui {:current-page "home"}, :data {}}, :util {} }} ))
+(def vibrashank-initial-atom (fcore/atom {:vibrashank {
+                                                       :app-cursor { :ui {:current-page "home"},
+                                                                     :data {:about-page { :user-text "about-page"}, :home-page {:user-text ":home-page"}}},
+                                                                     :util {} }
+                                          } ))
 ;; Now make the cursor.
 (def vibrashank-cursor (fcore/cursor vibrashank-initial-atom :vibrashank))
 
