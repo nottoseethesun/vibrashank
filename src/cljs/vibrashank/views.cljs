@@ -2,14 +2,17 @@
     (:require [reagent.core :as reagent :refer [atom]]
               [reagent.session :as session]))
 
-(defn home-page []
+
+(defn home-page [appData, uiData]
   [:div [:h2 "Welcome to vibrashank"]
-   [:div [:a {:href "#/about"} "go to about page"]]])
+   [:div [:a {:href "#/about"} "go to about page"]] (userMessage appData) ])
+
 
 (defn about-page [appData, uiData]
   [:div [:h2 "About vibrashank"]
    [:section [:a {:href "https://github.com/christopherbalz/vibrashank"} "Project Home"]]
-   [:div [:a {:href "#/"} "go to the home page"]] [:div uiData] ])
+   [:div [:a {:href "#/"} "go to the home page"]] (userMessage appData) ])
+
 
 (defn current-page [app-cursor]
   (let [cp (session/get :current-page)
@@ -17,12 +20,17 @@
 
   ;; - - Debug begin:
   (js/console.log pageName)
-  (js/console.log app-cursor)
-  (println (:data app-cursor))
+  ;;(js/console.log app-cursor)
+  ;; (println (getPageData app-cursor pageName) )
   ;; - - Debug end.
 
-  [:div [cp (:data ((keyword pageName) app-cursor)) (:ui ((keyword pageName) app-cursor)) ]]))
+  [:div [cp (getPageData app-cursor pageName) ]]))
 
-;; (:ui ((keyword pageName) app-cursor))
-;; (:data (pageName app-cursor))
-;; (:data ((keyword pageName) app-cursor))
+
+(defn getPageData[ app-cursor pageName ]
+       (get (:data (first app-cursor)) (keyword pageName)))
+
+
+(defn userMessage[ appData ]
+  [:div (:user-message appData)]
+)

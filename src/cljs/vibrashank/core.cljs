@@ -19,7 +19,7 @@
 ;; Set up the initial atom for the vibrashank cursor.
 (def vibrashank-initial-atom (fcore/atom {:vibrashank {
                                                        :app-cursor { :ui {:current-page "home"},
-                                                                     :data {:about-page { :user-text "about-page"}, :home-page {:user-text ":home-page"}}},
+                                                                     :data {:about-page { :user-message "You are at the About Page."}, :home-page {:user-message "You are at the Home Page."}}},
                                                                      :util {} }
                                           } ))
 ;; Now make the cursor.
