@@ -1,4 +1,12 @@
-// - - base styles
+// - - base styles / reset
+
+html {  // http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 
 body {
   font-family: 'Helvetica Neue', Verdana, Helvetica, Arial, sans-serif;
@@ -44,8 +52,9 @@ a:hover {
   bottom: 0px;
   left: 0px;
   width: 100%;
+  padding: 1em;
+  height: 7em;
   > div.vs-container {
     text-align: center;
-    padding: 1em;
   }
 }
