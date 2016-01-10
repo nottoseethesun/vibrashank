@@ -12,7 +12,9 @@
   (session/put! :current-page-name "home-page"))
 
 (secretary/defroute "/about" []
-  (session/put! :current-page #'vibrashank.views/about-page))
+  (session/put! :current-page #'vibrashank.views/about-page)
+  (session/put! :current-page-name "about-page"))
 
 (secretary/defroute "/todoapp" []
-  (session/put! :current-page #'vibrashank.views/todoapp-page))
+  (session/put! :current-page #'vibrashank.views/todoapp-page)
+  (session/put! :current-page-name "todoapp-page"))

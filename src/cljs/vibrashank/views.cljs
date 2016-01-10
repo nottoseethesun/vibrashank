@@ -2,7 +2,17 @@
     (:require [reagent.core :as reagent :refer [atom]]
               [reagent.session :as session]))
 
+
+;; - - Util
+
+
+(defn userMessage[ appData ]
+  [:div (:user-message appData)]
+)
+
+
 ;; - - Views
+
 
 (defn home-page [ appData, uiData ]
   [:div [:h2 "Welcome to vibrashank"]
@@ -12,7 +22,13 @@
      [:div [:a {:href "#/about"} "About"]] ( userMessage appData )
      ]]])
 
+
 (defn about-page [ appData, uiData ]
+
+  (defn handleDone [ event ]
+    (js/console.log event)
+    )
+
   [:div [:h2 "About vibrashank"]
    [:section
     [:p "`vibrashank` is a front-end web framework in ClojureScript that is based on data-flow architecture.  It is designed for maximum data
@@ -26,11 +42,10 @@ employing " [:a {:href "http://i.imgur.com/Lf7MNXE.jpg"} "a singleton root Curso
    [:section.vs-footer
     [:div.vs-container
      [:div [:a {:href "#/"} "Home"]]
-     [:div [:a {:href "https://github.com/christopherbalz/vibrashank"} "Project Home"]]]]])
+     [:div [:a {:href "https://github.com/christopherbalz/vibrashank"} "Project Home"]]
+     ( userMessage appData )
+     ]]])
 
-(defn handleDone [ event ]
-  (js/console.log event)
-  )
 
 (defn todoapp-page [ appData, uiData ]
   [:div [:h2 "To-do List Data Flow App with vibrashank"]
@@ -41,25 +56,22 @@ employing " [:a {:href "http://i.imgur.com/Lf7MNXE.jpg"} "a singleton root Curso
     [:div.vs-container
      [:a {:href "#/"} "Home"]] (userMessage appData) ]])
 
+
 ;; - - Switch the view based on the cursor.
 
 (defn current-page [ app-cursor ]
+
   (let [cp (session/get :current-page)
         pageName (session/get :current-page-name)]
 
-  ;; - - Debug begin:
-  (js/console.log pageName)
-  ;;(js/console.log app-cursor)
-  ;; (println (getPageData app-cursor pageName) )
-  ;; - - Debug end.
+    (defn getPageData[ app-cursor pageName ]
+      (get (:data (first app-cursor)) (keyword pageName)))
 
-  [:div [cp (getPageData app-cursor pageName) ]]))
+    ;; - - Debug begin:
+    (js/console.log "page name: ")
+    (js/console.log pageName)
+    (js/console.log app-cursor)
+    (println (getPageData app-cursor pageName) )
+    ;; - - Debug end.
 
-
-(defn getPageData[ app-cursor pageName ]
-       (get (:data (first app-cursor)) (keyword pageName)))
-
-
-(defn userMessage[ appData ]
-  [:div (:user-message appData)]
-)
+    [:div [cp (getPageData app-cursor pageName) ]]))

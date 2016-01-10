@@ -20,8 +20,9 @@
 (def vibrashank-initial-atom (fcore/atom {:vibrashank {
                                                        :app-cursor { :ui {:current-page "home"},
                                                                      :data {
-                                                                            :about-page { :user-message "You are at the About Page." },
-                                                                            :home-page  { :user-message "You are at the Home Page."  }
+                                                                            :about-page { :user-message "Thanks to the many open-source projects that inspired vibrashank." },
+                                                                            :home-page  { :user-message ""  },
+                                                                            :todoapp-page  { :user-message "Hint: You can use the browser back/foward button as well."  }
                                                                             }
                                                                      },
                                                        :util {} }
