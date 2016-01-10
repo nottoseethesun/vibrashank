@@ -4,15 +4,15 @@
 
 ;; - - Views
 
-(defn home-page []
+(defn home-page [ appData, uiData ]
   [:div [:h2 "Welcome to vibrashank"]
    [:div [:a {:href "#/todoapp"} "To-do List Application"]", an example web app built with vibrashank."]
    [:section.vs-footer
     [:div.vs-container
-     [:div [:a {:href "#/about"} "About"]]
+     [:div [:a {:href "#/about"} "About"]] ( userMessage appData )
      ]]])
 
-(defn about-page []
+(defn about-page [ appData, uiData ]
   [:div [:h2 "About vibrashank"]
    [:section
     [:p "`vibrashank` is a front-end web framework in ClojureScript that is based on data-flow architecture.  It is designed for maximum data
@@ -32,16 +32,34 @@ employing " [:a {:href "http://i.imgur.com/Lf7MNXE.jpg"} "a singleton root Curso
   (js/console.log event)
   )
 
-(defn todoapp-page []
+(defn todoapp-page [ appData, uiData ]
   [:div [:h2 "To-do List Data Flow App with vibrashank"]
    [:section
     [:input {:type "checkbox" :onChange handleDone} "Done!"]
     ]
    [:section.vs-footer
     [:div.vs-container
-     [:a {:href "#/"} "Home"]]]])
+     [:a {:href "#/"} "Home"]] (userMessage appData) ]])
 
 ;; - - Switch the view based on the cursor.
 
-(defn current-page [app-cursor]
-  [:div [(session/get :current-page)]])
+(defn current-page [ app-cursor ]
+  (let [cp (session/get :current-page)
+        pageName (session/get :current-page-name)]
+
+  ;; - - Debug begin:
+  (js/console.log pageName)
+  ;;(js/console.log app-cursor)
+  ;; (println (getPageData app-cursor pageName) )
+  ;; - - Debug end.
+
+  [:div [cp (getPageData app-cursor pageName) ]]))
+
+
+(defn getPageData[ app-cursor pageName ]
+       (get (:data (first app-cursor)) (keyword pageName)))
+
+
+(defn userMessage[ appData ]
+  [:div (:user-message appData)]
+)

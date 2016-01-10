@@ -8,7 +8,8 @@
 (secretary/set-config! :prefix "#")
 
 (secretary/defroute "/" []
-  (session/put! :current-page #'vibrashank.views/home-page))
+  (session/put! :current-page #'vibrashank.views/home-page)
+  (session/put! :current-page-name "home-page"))
 
 (secretary/defroute "/about" []
   (session/put! :current-page #'vibrashank.views/about-page))
