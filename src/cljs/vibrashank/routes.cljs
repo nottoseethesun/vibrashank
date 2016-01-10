@@ -13,5 +13,5 @@
 (secretary/defroute "/about" []
   (session/put! :current-page #'vibrashank.views/about-page))
 
-(secretary/defroute "/tododf" []
-  (session/put! :current-page #'vibrashank.views/tododf-page))
+(secretary/defroute "/todoapp" []
+  (session/put! :current-page #'vibrashank.views/todoapp-page))

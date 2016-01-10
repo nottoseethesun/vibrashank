@@ -6,7 +6,7 @@
 
 (defn home-page []
   [:div [:h2 "Welcome to vibrashank"]
-   [:div [:a {:href "#/tododf"} "To-do List Application"]", an example web app built with vibrashank."]
+   [:div [:a {:href "#/todoapp"} "To-do List Application"]", an example web app built with vibrashank."]
    [:section.vs-footer
     [:div.vs-container
      [:div [:a {:href "#/about"} "About"]]
@@ -28,12 +28,18 @@ employing " [:a {:href "http://i.imgur.com/Lf7MNXE.jpg"} "a singleton root Curso
      [:div [:a {:href "#/"} "Home"]]
      [:div [:a {:href "https://github.com/christopherbalz/vibrashank"} "Project Home"]]]]])
 
-(defn tododf-page []
+(defn handleDone [ event ]
+  (js/console.log event)
+  )
+
+(defn todoapp-page []
   [:div [:h2 "To-do List Data Flow App with vibrashank"]
+   [:section
+    [:input {:type "checkbox" :onChange handleDone} "Done!"]
+    ]
    [:section.vs-footer
     [:div.vs-container
      [:a {:href "#/"} "Home"]]]])
-
 
 ;; - - Switch the view based on the cursor.
 
