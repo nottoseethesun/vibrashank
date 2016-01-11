@@ -22,7 +22,10 @@
                                                                      :data {
                                                                             :about-page { :user-message "Thanks to the many open-source projects that inspired vibrashank." },
                                                                             :home-page  { :user-message ""  },
-                                                                            :todoapp-page  { :user-message "Hint: You can use the browser back/foward button as well."  }
+                                                                            :todoapp-page  {
+                                                                                            :user-message "Hint: You can use the browser back/foward button as well.",
+                                                                                            :isDone true
+                                                                                            }
                                                                             }
                                                                      },
                                                        :util {} }

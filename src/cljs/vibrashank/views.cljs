@@ -1,6 +1,7 @@
 (ns vibrashank.views
     (:require [reagent.core :as reagent :refer [atom]]
-              [reagent.session :as session]))
+              [reagent.session :as session]
+              [freactive.core :as fcore]))
 
 
 ;; - - Util
@@ -25,10 +26,6 @@
 
 (defn about-page [ appData, uiData ]
 
-  (defn handleDone [ event ]
-    (js/console.log event)
-    )
-
   [:div [:h2 "About vibrashank"]
    [:section
     [:p "`vibrashank` is a front-end web framework in ClojureScript that is based on data-flow architecture.  It is designed for maximum data
@@ -48,9 +45,27 @@ employing " [:a {:href "http://i.imgur.com/Lf7MNXE.jpg"} "a singleton root Curso
 
 
 (defn todoapp-page [ appData, uiData ]
-  [:div [:h2 "To-do List Data Flow App with vibrashank"]
+
+  (defn isDoneText []
+    (if (appData :isDone)
+      [:span "D!"] [:span "Nd."]
+    ))
+
+  (defn handleDone [ event ]
+    ;;(def dn (fcore/cursor appData :isDone))
+    (def dn (appData :isDone))
+    ;;(def appD (fcore/cursor (atom (appData :isDone)) (js/console.log) ))
+    ;;(reset! (appD (not (appData :isDone)))
+    ;;(js/console.log (appData :isDone))
+    (swap! dn not) ;; (defn notAtom [ _ ] (atom (not _))))
+    ;;(reset! dn (atom (not (appData :isDone))))
+    ;;(update-in appData [:isDone] not)
+    (js/console.log (appData :isDone))
+    )
+
+  [:div [:h2 "To-do List"][:p.vs-subtitle "A data flow app built with vibrashank"]
    [:section
-    [:input {:type "checkbox" :onChange handleDone} "Done!"]
+    [:input {:type "checkbox" :onChange handleDone :defaultChecked (appData :isDone) } (isDoneText)]
     ]
    [:section.vs-footer
     [:div.vs-container
