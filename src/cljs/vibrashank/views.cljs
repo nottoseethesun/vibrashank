@@ -53,11 +53,13 @@ employing " [:a {:href "http://i.imgur.com/Lf7MNXE.jpg"} "a singleton root Curso
 
   (defn handleDone [ event ]
     ;;(def dn (fcore/cursor appData :isDone))
-    (def dn (appData :isDone))
+    ;;(def dn (atom (appData :isDone)))
     ;;(def appD (fcore/cursor (atom (appData :isDone)) (js/console.log) ))
     ;;(reset! (appD (not (appData :isDone)))
     ;;(js/console.log (appData :isDone))
-    (swap! dn not) ;; (defn notAtom [ _ ] (atom (not _))))
+    ;;(swap! dn not)
+    ;;(defn notIsDone [] (not (appData :isDone)))
+    (swap! (appData :isDone) not)
     ;;(reset! dn (atom (not (appData :isDone))))
     ;;(update-in appData [:isDone] not)
     (js/console.log (appData :isDone))
